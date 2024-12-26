@@ -3,7 +3,7 @@
 
   
       <!-- Hero Section -->
-      <div id="hero" class="flex flex-row w-[100%]">
+      <div id="hero" class="flex flex-row w-screen">
  <div class="flex flex-col w-[50%] pt-[3%] pl-[10%]">
               <!-- Navigation Bar -->
       <div id="navbar" class="flex gap-[5%] items-center px-10 py-6">

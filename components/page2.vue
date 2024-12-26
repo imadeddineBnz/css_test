@@ -58,13 +58,13 @@
     },
     {
       id: 3,
-      image: "/images/chair.jpeg",
+      image: "/images/chaire.jpeg",
       name: "Dining room",
       subtitle: "Perfect for every occasion",
     },
     {
       id: 4,
-      image: "/images/coocked.jpeg",
+      image: "/images/cooked.jpeg",
       name: "Office",
       subtitle: "Functional and stylish",
     },
