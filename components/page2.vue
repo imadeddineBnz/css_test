@@ -1,86 +1,352 @@
 <template>
-    <div class="w-screen h-[598px] flex flex-row bg-[#f8f4f1]">
-    <div class="flex flex-col justify-center pl-[48px]">
-      <h1 class="text-[48px] text-[#5c5147] font-bold">Find your room</h1>
-      <p class="text-[20px] text-[#5c5147] mt-[12px]">Dining room, bedroom, bathroom or office. Find what you need.</p>
+<div class=" w-screen h-[529.5px] pt-12 pb-12 pl-8 pr-8 flex flex-col gap-8 bg-[#F3EEE8] justify-center items-center
+  xl:justify-around xl:pt-12 xl:pb-[70px] xl:p-l[150px] xl:p-r[150px] xl:h-[665px]" id="page2">
+
+  <div class="flex flex-col gap-[20px] lg:w-[100%] lg:self-center lg:justify-around sm:flex-row xl:hidden">
+    <h4 id="title22">Find your room</h4>
+    <p id="content22">Dining room, bedroom, bathroom or <br>
+       office. Find what you need</p>
+  </div>
+  <div class="w-[311px] h-[232.5] sm:w-[550px] xl:hidden">
+    <div class="w-[100%] flex " >
+     <div class="w-[100%] self-center">
+      <swiper
+  ref="swiperRef"
+  :slides-per-view="1"
+  @swiper="onSwiper"
+  :loop="true"
+  :modules="[Navigation]"
+  :space-between="20"
+  :breakpoints="{
+    640:{slidesPerView:2},
+    768:{slidesPerView:2},
+    
+  }"
+>
+  <swiper-slide>
+    <div class="relative w-[311px] h-[232px]">
+      <!-- New arrivals text -->
+      <p id="p22" class="absolute top-0 right-12 z-10 text-sm">
+        New arrivals
+      </p>
+      <!-- Image -->
+      <div class="w-[45%] h-full bg-[url('/public/images/bedroom.webp')] bg-cover bg-center"></div>
+      <!-- Centered design name -->
+      <div
+        id="name2"
+        class="absolute inset-0 flex justify-center items-center bg-opacity-30 "
+      >
+        Bedroom
+      </div>
     </div>
-  
-    <swiper
-      :slides-per-view="2"
-      :space-between="24"
-      :loop="true"
-      class="my-swiper ml-[48px]"
-    >
-      <swiper-slide v-for="(slide, index) in slides" :key="index">
-        <div class="relative w-[458.25px] h-[350px] rounded-[16px] overflow-hidden border border-[#e8e6e4] shadow-lg">
-          <img
-            :src="slide.image"
-            alt="Room"
-            class="absolute inset-0 object-cover w-full h-full"
-          />
-          <div class="absolute inset-0 bg-[#ffffffcc] flex flex-col justify-center items-center">
-            <p class="text-[32px] text-[#8b6556] font-bold">{{ slide.name }}</p>
-            <p class="text-[18px] text-[#5c5147] mt-[8px]">{{ slide.subtitle }}</p>
-          </div>
-          <div class="absolute top-0 right-0 bg-[#f8f4f1] text-[14px] text-[#8b6556] px-[12px] py-[6px] rounded-bl-[8px]">
-            New arrivals
-          </div>
-        </div>
-      </swiper-slide>
-    </swiper>
-  
-    <div class="absolute bottom-[24px] right-[24px] text-[16px] text-[#8b6556] flex gap-[12px]">
-      <span>01 / 05</span>
-      <button class="flex items-center gap-[4px]">
-        Next <span class="material-icons">arrow_forward</span>
-      </button>
+  </swiper-slide>
+
+  <swiper-slide>
+    <div class="relative w-[311px] h-[232px]">
+      <!-- New arrivals text -->
+      <p id="p22" class="absolute top-0 right-12 z-10 text-sm">
+        New arrivals
+      </p>
+      <!-- Image -->
+      <div class="w-[45%] h-full bg-[url('/public/images/chaire.webp')] bg-cover bg-center"></div>
+      <!-- Centered design name -->
+      <div
+        id="name2"
+        class="absolute inset-0 flex justify-center items-center  bg-opacity-30 "
+      >
+        Chair
+      </div>
+    </div>
+  </swiper-slide>
+
+  <swiper-slide>
+    <div class="relative w-[311px] h-[232px]">
+      <!-- New arrivals text -->
+      <p id="p22" class="absolute top-0 right-12 z-10 text-sm">
+        New arrivals
+      </p>
+      <!-- Image -->
+      <div class="w-[45%] h-full bg-[url('/public/images/living room.webp')] bg-cover bg-center"></div>
+      <!-- Centered design name -->
+      <div
+        id="name2"
+        class="absolute inset-0 flex justify-center items-center bg-opacity-30 "
+      >
+        Living Room
+      </div>
+    </div>
+  </swiper-slide>
+
+  <swiper-slide>
+    <div class="relative w-[311px] h-[232px]">
+      <!-- New arrivals text -->
+      <p id="p22" class="absolute top-0 right-12 z-10 text-sm">
+        New arrivals
+      </p>
+      <!-- Image -->
+      <div class="w-[45%] h-full bg-[url('/public/images/cooked.webp')] bg-cover bg-center"></div>
+      <!-- Centered design name -->
+      <div
+        id="name2"
+        class="absolute inset-0 flex justify-center items-center bg-opacity-30 "
+      >
+        Kitchen
+      </div>
+    </div>
+  </swiper-slide>
+</swiper>
+
+</div>
+     
+</div>
+    
+  </div>
+  <div>
+    <div @click="swiperNextSlide" id="next" class=" xl:hidden">
+      <p  class="flex gap-2">Next <img src="/public/icons/Right.svg" alt=""></p>
+    </div>
+    <div>
+
     </div>
   </div>
-  
-</template>
 
-  <script setup>
-  import { Swiper, SwiperSlide } from "swiper/vue";
-  import "swiper/swiper-bundle.css";
+  <div class=" hidden xl:block xl:h-[60px] xl:w-[1140px] ">
+    <p id="title2">Find your room</p>
+  </div>
+  <div class="hidden xl:flex xl:gap-6">
+    <div><p id="content2">Dining room, <br>
+       bedroom,bathroom <br>
+        or office. Find what
+         <br> you need</p></div>
+    <div class="hidden xl:flex xl:h-[458px] xl:w-[947px]">
+      <div class=" hidden xl:flex xl:w-[100%]">
+        <swiper
+  ref="swiperRef"
+  :slides-per-view="2"
+  @swiper="onSwiper"
+  :loop="true"
+  :modules="[Navigation]"
+  :space-between="20"
+>
+  <swiper-slide>
+    <div class="relative w-[458px] h-[350px]">
+      <!-- New arrivals text -->
+      <p id="p22" class="absolute top-0 right-0 z-10">
+        New arrivals
+      </p>
+      <!-- Image -->
+      <div class="w-[60%] h-full bg-[url('/public/images/bedroom.webp')] bg-cover bg-center"></div>
+      <!-- Centered design name -->
+      <div id="name"
+        class="absolute inset-0 flex justify-center items-center  bg-opacity-30"
+      >
+        Bedroom
+      </div>
+    </div>
+  </swiper-slide>
+
+  <swiper-slide>
+    <div class="relative w-[458px] h-[350px] overflow-hidden">
+      <!-- New arrivals text -->
+      <p id="p22" class="absolute top-0 right-0 z-10">
+        New arrivals
+      </p>
+      <!-- Image -->
+      <div class="w-[60%] h-full bg-[url('/public/images/chaire.webp')] bg-cover bg-center"></div>
+      <!-- Centered design name -->
+      <div id="name"
+        class="absolute inset-0 flex justify-center items-center bg-opacity-30 "
+      >
+        Chair
+      </div>
+    </div>
+  </swiper-slide>
+
+  <swiper-slide>
+    <div class="relative w-[458px] h-[350px]">
+      <!-- New arrivals text -->
+      <p id="p22" class="absolute top-0 right-0 z-10">
+        New arrivals
+      </p>
+      <!-- Image -->
+      <div class="w-[60%] h-full bg-[url('/public/images/living room.webp')] bg-cover bg-center"></div>
+      <!-- Centered design name -->
+      <div id="name"
+        class="absolute inset-0 flex justify-center items-center bg-opacity-30"
+      >
+        Living Room
+      </div>
+    </div>
+  </swiper-slide>
+
+  <swiper-slide>
+    <div class="relative w-[458px] h-[350px]">
+      <!-- New arrivals text -->
+      <p id="p22" class="absolute top-0 right-0 z-10">
+        New arrivals
+      </p>
+      <!-- Image -->
+      <div class="w-[60%] h-full bg-[url('/public/images/cooked.webp')] bg-cover bg-center"></div>
+      <!-- Centered design name -->
+      <div id="name"
+        class="absolute inset-0 flex justify-center items-center  bg-opacity-30 "
+      >
+        Kitchen
+      </div>
+    </div>
+  </swiper-slide>
+</swiper>
+
+  </div>
   
-  const slides = [
-    {
-      id: 1,
-      image: "/images/bedroom.png",
-      name: "Bedroom",
-      subtitle: "Cozy and modern designs",
-    },
-    {
-      id: 2,
-      image: "/images/living room.jpeg",
-      name: "Living room",
-      subtitle: "Elegant and spacious setups",
-    },
-    {
-      id: 3,
-      image: "/images/chaire.jpeg",
-      name: "Dining room",
-      subtitle: "Perfect for every occasion",
-    },
-    {
-      id: 4,
-      image: "/images/cooked.jpeg",
-      name: "Office",
-      subtitle: "Functional and stylish",
-    },
-    {
-      id: 5,
-      image: "/images/tables.jpeg",
-      name: "Bathroom",
-      subtitle: "Relax in comfort",
-    },
-  ];
-  </script>
+    
   
-  <style scoped>
-  .my-swiper {
-    width: 100%;
-    height: auto;
-  }
-  </style>
+
+    </div>
+  </div>
+  <div id="next" class="hidden xl:block">
+    <span id="learn2" @click="swiperNextSlide" class="flex gap-4">next <img @click="swiperNextSlide" src="/public/icons/Right.svg" class="w-[9px] h-4 self-center"   alt=""></span>
+  </div>
+  <div>
+
+  </div>
+
+</div>
+</template>
+<script>
+import {defineComponent, ref} from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+
+import { Navigation  } from 'swiper/modules';
+
+
+export default defineComponent({
+    methods: {
+        Navigation() {
+            return Navigation
+        }
+    },
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+
+        const swiperInstance = ref()
+
+        function onSwiper(swiper) {
+            swiperInstance.value = swiper
+        }
+        const swiperNextSlide = () => {
+            swiperInstance.value.slideNext()
+        };
+        const swiperPrevSlide = () => {
+            swiperInstance.value.slidePrev()
+        };
+        return {
+            swiperPrevSlide,
+            swiperNextSlide,
+            onSwiper,
+        };
+    },
+});
+</script>
+<style>
+#next:hover{
+cursor: pointer;
+}
+#p22{
+  font-family: varta400;
+font-size: 18px;
+font-weight: 400;
+line-height: 25px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #706458E5;
+}
+#title2{
+font-family: mery400;
+font-size: 55px;
+font-weight: 400;
+line-height: 60px;
+letter-spacing: -0.6000000238418579px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #706458;
+}
+#title22{
+ 
+font-family: mery400;
+font-size: 35px;
+font-weight: 400;
+line-height: 40px;
+letter-spacing: -0.30000001192092896px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #534B42;
+
+}
+#content2{
+font-family: varta400;
+font-size: 18px;
+font-weight: 400;
+line-height: 25px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #706458E5;
+
+}
+#content22{
+
+font-family: varta400;
+font-size: 18px;
+font-weight: 400;
+line-height: 25px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #706458E5;
+
+}
+#name{
+
+font-family: mery400;
+font-size: 55px;
+font-weight: 400;
+line-height: 60px;
+letter-spacing: -0.6000000238418579px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #A06056;
+
+}
+#name2{
   
+font-family: mery400;
+font-size: 35px;
+font-weight: 400;
+line-height: 40px;
+letter-spacing: -0.30000001192092896px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #A06056;
+}
+#learn2{
+  font-family: karla700;
+font-size: 20px;
+font-weight: 700;
+line-height: 25px;
+letter-spacing: 0.30000001192092896px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #A06056;
+}
+</style>

@@ -4,29 +4,35 @@
 
 
 
+
 @font-face{
-    font-family: Merriweather_weight700;
+    font-family: mery700;
     src: url(/fonts/mery700.ttf);
 }
 @font-face{
-    font-family: Merriweather300;
+    font-family: mery300;
     src: url(/fonts/Merriweather-Light.ttf);
-}
-@font-face{
-    font-family: varta_weight400;
-    src: url(/fonts/Varta-Regular.ttf);
-}
-@font-face{
-    font-family: varta_weight600;   
-    src: url(/fonts/Varta-SemiBold.ttf);
-}
-
-
-@font-face{
-    font-family: karla;
-    src: url(/fonts/karla/Karla-VariableFont_wght.ttf);
 }
 @font-face{
     font-family: mery400;
     src: url(/fonts/Merriweather-Regular.ttf );
 }
+@font-face{
+    font-family: varta400;
+    src: url(/fonts/Varta-Regular.ttf);
+}
+@font-face{
+    font-family: varta600;   
+    src: url(/fonts/Varta-SemiBold.ttf);
+}
+
+@font-face{
+    font-family: varta700;
+    src: url(/fonts/Varta-Bold.ttf);
+}
+
+@font-face{
+    font-family: karla700;
+    src: url(/fonts/Karla-Bold.ttf);
+}
+

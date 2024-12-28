@@ -2,14 +2,13 @@
 <template>
 
 <div>
-  <hero/>
-  <page2/>
-  
 
+
+  <hero1/>
+<page2/>
 <page3/>
- 
+<page4/>
   <slot></slot>
-  
   <foot/>
 </div>
 

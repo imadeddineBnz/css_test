@@ -1,10 +1,10 @@
 <template>
-    <div id="bodyh" class="h-screen bg-[#f8f4ef] font-sans">
+    <div id="bodyh" class="h-screen bg-[#f8f4ef]">
 
   
       <!-- Hero Section -->
       <div id="hero" class="flex flex-row w-screen">
- <div class="flex flex-col w-[50%] pt-[3%] pl-[10%]">
+ <div class="flex flex-col w-[50%] h-screen pt-[3%] pl-[10%]">
               <!-- Navigation Bar -->
       <div id="navbar" class="flex gap-[5%] items-center px-10 py-6">
         <!-- Logo -->
@@ -24,7 +24,7 @@
       </div>
         
         <!-- Text Content -->
-        <div id="heroContent" class=" w-[460px]  h-[372px] px-20 mt-16 flex flex-col pl-10">
+        <div id="heroContent" class=" w-[460px]  h-screen px-20 mt-16 flex flex-col pl-10">
           <p id="heroP">Home Design</p>
           <p id="heroH">
             Elegance for <br> Interiors & Exteriors
@@ -45,7 +45,7 @@
          <!-- Contact Icon -->
         
           <img src="/icons/Contact.svg" alt="Contact" class="h-[50px] w-[50px] ">
-        
+          
         </div>
       </div>
     </div>
